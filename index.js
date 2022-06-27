@@ -25,6 +25,8 @@ export async function reserveTokenExample() {
     console.log('Info: It is important to let your users know how many transactions to expect and what they are.', 'orange');
     console.log('This example consists of 1 Transaction:', 'orange');
     console.log('1. Deploy and Mint ERC20 Token to be used in place of USDC (fee+gas cost at circa 2022-06-27T20:10:00Z: 0.0007387 MATIC)', 'orange');
+    // todo maybe warn users they will need to have X matic in their wallet in order to complete ALL the transactions
+
     console.log('------------------------------'); // separator
 
     // constants (can put these into .env)
