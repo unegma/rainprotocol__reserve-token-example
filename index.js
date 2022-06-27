@@ -12,7 +12,7 @@ logToWindow('console'); // override console.log to output to browser with very s
 export async function reserveTokenExample() {
 
   try {
-    console.log(`Reserve Token Deploy Example (check your console and make sure you have a browser wallet installed)`, 'black', 'bold');
+    console.log(`Reserve Token Deploy Example (make sure you have a browser wallet installed)`, 'black', 'bold');
 
     const { address, signer } = await connect(); // get the signer and account address using a very basic connection implementation
 
