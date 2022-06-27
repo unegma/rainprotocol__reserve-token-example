@@ -1,8 +1,8 @@
-import * as rainSDK from "rain-sdk"; // rain SDK imported using importmap in index.html (or in package.json)
-import { ethers } from "ethers"; // ethers library imported using importmap in index.html (or in package.json)
-import { connect } from "./connect.js"; // a very basic web3 connection implementation
-import { logToWindow } from "@unegma/utils"; // rain SDK imported using importmap in index.html (or in package.json)
-logToWindow('console'); // override console.log to output to browser with very simple styling
+import * as rainSDK from 'rain-sdk'; // rain SDK imported using importmap in index.html (or in package.json)
+import { ethers } from 'ethers'; // ethers library imported using importmap in index.html (or in package.json)
+import { connect } from './connect.js'; // a very basic web3 connection implementation
+import { logToWindow } from '@unegma/utils';
+logToWindow('console'); // override console.log to output to browser with very simple styling (be aware, this prevents pushing multiple messages in one .log())
 
 /**
  * Reserve Token Example
@@ -13,11 +13,10 @@ export async function reserveTokenExample() {
 
   try {
     console.log(`Reserve Token Deploy Example (make sure you have a browser wallet installed)`, 'black', 'bold');
-
     const { address, signer } = await connect(); // get the signer and account address using a very basic connection implementation
 
-    console.log("Info: It is important to let your users know how many transactions to expect and what they are. " +
-      "This example consists of X Transactions:\n\n", 'orange'
+    console.log(`Info: It is important to let your users know how many transactions to expect and what they are. ` +
+      `This example consists of X Transactions:`, 'orange'
     );
 
     console.log('------------------------------'); // separator
@@ -74,7 +73,7 @@ export async function reserveTokenExample() {
 
     console.log('------------------------------'); // separator
 
-    console.log("Info: Done");
+    console.log('Info: Done');
   } catch (err) {
     console.log('------------------------------'); // separator
     console.log(`Error:`, 'red', 'bold');

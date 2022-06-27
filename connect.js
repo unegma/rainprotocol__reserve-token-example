@@ -1,6 +1,7 @@
-import { ethers } from "ethers";
-import { logToWindow } from "@unegma/utils"; // rain SDK imported using importmap in index.html (or in package.json)
-logToWindow('console');
+import { ethers } from 'ethers';
+import { logToWindow } from '@unegma/utils';
+logToWindow('console'); // override console.log to output to browser with very simple styling (be aware, this prevents pushing multiple messages in one .log())
+
 
 /**
  * Very basic connection to Web3 wallet
