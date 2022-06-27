@@ -63,8 +63,8 @@ export async function reserveTokenExample() {
     // // todo claim function will mint another token (in addition to initial supply)??
     const EMISSIONS_ERC20_TOKEN_ADDRESS = emissionsErc20.address;
     console.log(`Result: deployed emissionsErc20, with address: ${EMISSIONS_ERC20_TOKEN_ADDRESS} and sent you ${ERC20_INITIAL_SUPPLY} tokens`, 'green'); // todo check what exists in addition to what is on an erc20, are erc20s through the evm 'factory'?
-    console.log('Info: to see the tokens in your Wallet, add a new token with the address above. ALSO, REMEMBER TO NOTE DOWN THIS ADDRESS, AS IT WILL BE USED AS RESERVE_TOKEN IN FUTURE TUTORIALS.', 'red', 'bold');
     console.info(emissionsErc20);
+    console.log('Info: to see the tokens in your Wallet, add a new token with the address above. ALSO, REMEMBER TO NOTE DOWN THIS ADDRESS, AS IT WILL BE USED AS RESERVE_TOKEN IN FUTURE TUTORIALS.', 'red', 'bold');
 
     // // todo section on how to spend
     // console.log(`Info: Connecting to ${emissionsERC20Config.erc20Config.name} ERC20 token (${EMISSIONS_ERC20_TOKEN_ADDRESS}) for approval of spend of ${EXAMPLE_ERC20_AMOUNT_TO_DEPOSIT} ${emissionsERC20Config.erc20Config.symbol}:`, );
