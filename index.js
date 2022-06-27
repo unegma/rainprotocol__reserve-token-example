@@ -4,6 +4,11 @@ import { connect } from './connect.js'; // a very basic web3 connection implemen
 import { logToWindow } from '@unegma/utils';
 logToWindow('console'); // override console.log to output to browser with very simple styling (be aware, this prevents pushing multiple messages in one .log())
 
+const CHAIN_DATA = {
+  name: 'Mumbai',
+  chainId: 80001 // Mumbai testnet chain id
+}
+
 /**
  * Reserve Token Example
  * Tutorials (see Getting Started): https://docs.rainprotocol.xyz
@@ -13,7 +18,7 @@ export async function reserveTokenExample() {
 
   try {
     console.log(`Reserve Token Deploy Example (make sure you have a browser wallet installed)`, 'black', 'bold');
-    const { address, signer } = await connect(); // get the signer and account address using a very basic connection implementation
+    const { address, signer } = await connect(CHAIN_DATA); // get the signer and account address using a very basic connection implementation
 
     console.log(`Info: It is important to let your users know how many transactions to expect and what they are. ` +
       `This example consists of X Transactions:`, 'orange'
