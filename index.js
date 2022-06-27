@@ -61,13 +61,13 @@ export async function reserveTokenExample() {
     console.log(emissionsERC20Config, 'blue');
     const emissionsErc20 = await rainSDK.EmissionsERC20.deploy(signer, emissionsERC20Config);
     // // todo claim function will mint another token (in addition to initial supply)??
-    const EMISSIONS_ERC20_TOKEN_ADDRESS = emissionsErc20.address;
-    console.log(`Result: deployed emissionsErc20, with address: ${EMISSIONS_ERC20_TOKEN_ADDRESS} and sent you ${ERC20_INITIAL_SUPPLY} tokens`, 'green'); // todo check what exists in addition to what is on an erc20, are erc20s through the evm 'factory'?
+    const emissionsERC20Address = emissionsErc20.address;
+    console.log(`Result: deployed emissionsErc20, with address: ${emissionsERC20Address} and sent you ${ERC20_INITIAL_SUPPLY} tokens`, 'green'); // todo check what exists in addition to what is on an erc20, are erc20s through the evm 'factory'?
     console.info(emissionsErc20);
     console.log('Info: to see the tokens in your Wallet, add a new token with the address above. ALSO, REMEMBER TO NOTE DOWN THIS ADDRESS, AS IT WILL BE USED AS RESERVE_TOKEN IN FUTURE TUTORIALS.', 'red', 'bold');
 
     // // todo section on how to spend
-    // console.log(`Info: Connecting to ${emissionsERC20Config.erc20Config.name} ERC20 token (${EMISSIONS_ERC20_TOKEN_ADDRESS}) for approval of spend of ${EXAMPLE_ERC20_AMOUNT_TO_DEPOSIT} ${emissionsERC20Config.erc20Config.symbol}:`, );
+    // console.log(`Info: Connecting to ${emissionsERC20Config.erc20Config.name} ERC20 token (${emissionsERC20Address}) for approval of spend of ${EXAMPLE_ERC20_AMOUNT_TO_DEPOSIT} ${emissionsERC20Config.erc20Config.symbol}:`, );
     // const approveTransaction = await emissionsErc20.approve(
     //   redeemableERC20ClaimEscrow.address,
     //   ethers.utils.parseUnits(EXAMPLE_ERC20_AMOUNT_TO_DEPOSIT.toString(), EXAMPLE_ERC20_DECIMALS)
@@ -79,7 +79,7 @@ export async function reserveTokenExample() {
 
     // todo show how to claim more (if possible)
 
-    // console.log(`Info: receipt for withdrawal (please check your wallet to make sure you have the token, you may need to add the address for the token ${EMISSIONS_ERC20_TOKEN_ADDRESS}):`, withdrawReceipt);
+    // console.log(`Info: receipt for withdrawal (please check your wallet to make sure you have the token, you may need to add the address for the token ${emissionsERC20Address}):`, withdrawReceipt);
 
     console.log('------------------------------'); // separator
 
