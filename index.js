@@ -1,6 +1,8 @@
 import * as rainSDK from "rain-sdk"; // rain SDK imported using importmap in index.html (or in package.json)
 import { ethers } from "ethers"; // ethers library imported using importmap in index.html (or in package.json)
 import { connect } from "./connect.js"; // a very basic web3 connection implementation
+import { logToWindow } from "@unegma/utils"; // rain SDK imported using importmap in index.html (or in package.json)
+logToWindow('console'); // override console.log to output to browser with very simple styling
 
 /**
  * Reserve Token Example
@@ -10,12 +12,12 @@ import { connect } from "./connect.js"; // a very basic web3 connection implemen
 export async function reserveTokenExample() {
 
   try {
+    console.log(`Reserve Token Deploy Example (check your console and make sure you have a browser wallet installed)`, 'black', 'bold');
+
     const { address, signer } = await connect(); // get the signer and account address using a very basic connection implementation
 
-    console.log('------------------------------'); // separator
-
-    console.warn("Info: It is important to let your users know how many transactions to expect and what they are. " +
-      "This example consists of X Transactions:\n\n"
+    console.log("Info: It is important to let your users know how many transactions to expect and what they are. " +
+      "This example consists of X Transactions:\n\n", 'orange'
     );
 
     console.log('------------------------------'); // separator
@@ -44,12 +46,14 @@ export async function reserveTokenExample() {
       },
     };
 
-    console.log('### Section 1 (Admin function): Mint erc20 Token for Deploying erc20 for reserve token');
-    console.log("Info: Minting new ERC20 with the following state:", emissionsERC20Config);
+    console.log(`### Section 1 (Admin function): Mint erc20 Token for Deploying erc20 for reserve token`, 'black', 'bold');
+    console.log(`Info: Minting new ERC20 with the following state:`);
+    console.log(emissionsERC20Config);
     const emissionsErc20 = await rainSDK.EmissionsERC20.deploy(signer, emissionsERC20Config);
     // // todo claim function will mint another token (in addition to initial supply)??
     const EMISSIONS_ERC20_TOKEN_ADDRESS = emissionsErc20.address;
-    console.log(`Result: emissionsErc20, with address ${EMISSIONS_ERC20_TOKEN_ADDRESS}:`, emissionsErc20); // todo check what exists in addition to what is on an erc20, are erc20s through the evm 'factory'?
+    console.log(`Result: emissionsErc20, with address ${EMISSIONS_ERC20_TOKEN_ADDRESS}:`); // todo check what exists in addition to what is on an erc20, are erc20s through the evm 'factory'?
+    console.log(emissionsErc20);
 
     console.log('------------------------------'); // separator
 
@@ -72,7 +76,9 @@ export async function reserveTokenExample() {
 
     console.log("Info: Done");
   } catch (err) {
-    console.log(err);
+    console.log('------------------------------'); // separator
+    console.log(`Error:`, 'red', 'bold');
+    console.log(err, 'red');
   }
 }
 

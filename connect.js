@@ -1,4 +1,6 @@
 import { ethers } from "ethers";
+import { logToWindow } from "@unegma/utils"; // rain SDK imported using importmap in index.html (or in package.json)
+logToWindow('console');
 
 /**
  * Very basic connection to Web3 wallet
@@ -17,11 +19,13 @@ export const connect = async () => {
     await provider.send("eth_requestAccounts", []);
     const signer = provider.getSigner();
     const address = await signer.getAddress();
-    console.log("Info: Connected to account with address", address);
+    console.log(`Info: Connected to account with address:`);
+    console.log(address, 'green');
     console.log('------------------------------'); // separator
     return { signer, address };
   } catch (err) {
-    console.log('Error: You may not have a Web3 Wallet installed', err);
+    console.log('Error: You may not have a Web3 Wallet installed', 'red', 'bold');
+    console.log(err, 'red');
     throw new Error('Web3WalletConnectError');
   }
 }
