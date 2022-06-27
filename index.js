@@ -23,7 +23,7 @@ export async function reserveTokenExample() {
 
     console.log('## Transactions', 'orange', 'bold');
     console.log('Info: It is important to let your users know how many transactions to expect and what they are.', 'orange');
-    console.log('This example consists of 1 Transaction:', 'orange');
+    console.log('Info: This example consists of 1 Transaction:', 'orange');
     console.log('1. Deploy and Mint ERC20 Token to be used in place of USDC (fee+gas cost at circa 2022-06-27T20:10:00Z: 0.0007387 MATIC)', 'orange');
     // todo maybe warn users they will need to have X matic in their wallet in order to complete ALL the transactions
 
@@ -65,6 +65,8 @@ export async function reserveTokenExample() {
     console.log(`Result: deployed emissionsErc20, with address: ${emissionsERC20Address} and sent you ${ERC20_INITIAL_SUPPLY} tokens`, 'green'); // todo check what exists in addition to what is on an erc20, are erc20s through the evm 'factory'?
     console.info(emissionsErc20);
     console.log('Info: to see the tokens in your Wallet, add a new token with the address above. ALSO, REMEMBER TO NOTE DOWN THIS ADDRESS, AS IT WILL BE USED AS RESERVE_TOKEN IN FUTURE TUTORIALS.', 'red', 'bold');
+
+    // todo emissionsERC20.claim(address, DATA_BytesLike)
 
     // // todo section on how to spend
     // console.log(`Info: Connecting to ${emissionsERC20Config.erc20Config.name} ERC20 token (${emissionsERC20Address}) for approval of spend of ${EXAMPLE_ERC20_AMOUNT_TO_DEPOSIT} ${emissionsERC20Config.erc20Config.symbol}:`, );
