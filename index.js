@@ -44,7 +44,7 @@ export async function reserveTokenExample() {
         initialSupply: ethers.utils.parseUnits(ERC20_INITIAL_SUPPLY.toString(), ERC20_DECIMALS), // TODO CHECK UNDERSTANDING HOW TO LIMIT CORRECTLY, AND TO WHERE THIS GOES ON DEPLOYING THE CONTRACT (distributor?)
       },
       vmStateConfig: {
-        constants: [ERC20_INITIAL_SUPPLY], // mint a set amount at a time (infinitely), if set to 10, will mint 10 at a time, no more no less (infinitely)
+        constants: [ethers.utils.parseUnits(ERC20_INITIAL_SUPPLY.toString(), ERC20_DECIMALS)], // mint a set amount at a time (infinitely), if set to 10, will mint 10 at a time, no more no less (infinitely)
         sources: [
           ethers.utils.concat([
             rainSDK.utils.op(rainSDK.Sale.Opcodes.VAL, 0),
