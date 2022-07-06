@@ -57,7 +57,7 @@ export async function reserveTokenExample() {
 
     console.log(`> ## Section 1: Deploy and Mint ERC20 Token`, 'black', 'bold');
     console.log(`> Info: These tokens (${TOKEN_SYMBOL}) will be used as a RESERVE_TOKEN for following tutorials in place of USDC, so make sure to note down the erc20 token address which will be displayed after the transaction completes)`, 'red');
-    console.log(`> Info: Deploying and Minting new ERC20 with the following state:`); // todo do I need to change these away from state?
+    console.log(`> Info: Deploying and Minting new ERC20 with the following parameters:`);
     console.log(emissionsERC20Config, 'blue');
     const emissionsErc20 = await rainSDK.EmissionsERC20.deploy(signer, emissionsERC20Config);
     // // todo claim function will mint another token (in addition to initial supply)??
